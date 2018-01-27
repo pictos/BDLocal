@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BDLocal.Views.ToDoPage"
+             Title="ToDos">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Text="{Binding Item}" Placeholder="Qual a tarefa de hoje?"/>
+            <Button Text="Add Tarefa" Command="{Binding AddCommand}"/>
+            <ListView ItemsSource="{Binding ToDos}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Nome}" Detail="{Binding CreatedDisplay}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
